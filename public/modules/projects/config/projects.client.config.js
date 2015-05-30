@@ -6,7 +6,7 @@ angular.module('projects').run(['Menus',
 		// Set top bar menu items
 		Menus.addMenuItem('topbar', 'Projects', 'projects', 'dropdown', '/projects(/create)?');
 		Menus.addSubMenuItem('topbar', 'projects', 'Current Projects', 'projects');
-		Menus.addSubMenuItem('topbar', 'projects', 'Old Projects', 'projects');
+		Menus.addSubMenuItem('topbar', 'projects', 'Old Projects', 'oldprojects');
 		Menus.addSubMenuItem('topbar', 'projects', 'New Project', 'projects/create');
 	}
 ]);

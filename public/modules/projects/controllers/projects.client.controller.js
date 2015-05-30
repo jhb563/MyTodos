@@ -68,6 +68,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Find a list of Projects
 		$scope.find = function() {
+			 $scope.projects = Projects.query();
+		};
+
+		$scope.findOld = function() {
 			$scope.projects = Projects.query();
 		};
 

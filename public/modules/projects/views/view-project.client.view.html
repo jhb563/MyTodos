@@ -3,10 +3,9 @@
 		<h1 data-ng-bind="project.name"></h1>
 		<h3>Deadline:</h3>
 		<h4 data-ng-bind="project.deadline | date:'medium'"></h4>
-		<h4 data-ng-bind="project.finished"></h4>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == project.user._id))">
-		<a class="btn btn-primary" data-ng-click="finish();">
+		<a class="btn btn-primary" data-ng-click="finish()" ng-hide="project.finished">
 			<i class="glyphicon glyphicon-ok"></i>
 		</a>
 		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">

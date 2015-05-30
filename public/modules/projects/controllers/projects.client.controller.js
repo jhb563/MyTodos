@@ -42,6 +42,19 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			}
 		};
 
+		// Mark project as finished
+		$scope.finish = function() {
+			var project = $scope.project;
+			if (project) {
+				project.finished = true;
+				project.$update(function() {
+					$location.path('projects/'+project._id);
+				}, function(errorResponse) {
+					$scope.error = errorResponse.data.message;
+				});
+			}
+		}
+
 		// Update existing Project
 		$scope.update = function() {
 			var project = $scope.project;
@@ -64,5 +77,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				projectId: $stateParams.projectId
 			});
 		};
+
+		
 	}
 ]);

@@ -24,6 +24,10 @@ var ProjectSchema = new Schema({
 		type: Date,
     		required: 'Please enter a deadline',
     	},
+	finished: {
+		type: Boolean,
+		default: false
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'

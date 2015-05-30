@@ -9,7 +9,12 @@
                     <label class="control-label" for="name">Name</label>
                     <div class="controls">
                         <input type="text" data-ng-model="project.name" id="name" class="form-control" placeholder="Name" required>
+
                     </div>
+
+		    <label class="control-label" for="deadline">Deadline</label>
+		    <div class="controls">
+		    	<input type="datetime-local" data-ng-model="project.deadline" id="deadline" class="form-control" placeholder="Deadline" required>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">

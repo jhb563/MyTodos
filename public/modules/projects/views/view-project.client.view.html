@@ -5,6 +5,9 @@
 		<h4 data-ng-bind="project.deadline | date:'medium'"></h4>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == project.user._id))">
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-ok"></i>
+		</a>
 		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>

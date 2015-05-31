@@ -20,6 +20,15 @@ var TaskSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	deadline: {
+		type: Date,
+		default: Date.now,
+		required: 'Please fill in deadline'
+	},
+	finished: {
+		type: Boolean,
+		default: false
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'

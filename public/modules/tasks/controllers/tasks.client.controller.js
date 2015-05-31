@@ -9,7 +9,9 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 		$scope.create = function() {
 			// Create new Task object
 			var task = new Tasks ({
-				name: this.name
+				name: this.name,
+				deadline: this.deadline,
+				finished: false
 			});
 
 			// Redirect after save
@@ -18,6 +20,7 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 
 				// Clear form fields
 				$scope.name = '';
+				$scope.deadline = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

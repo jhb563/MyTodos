@@ -32,7 +32,13 @@ var TaskSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	projectId: {
+		type: Schema.ObjectId,
+		ref: 'Project'
 	}
 });
 
-mongoose.model('Task', TaskSchema);
+module.exports = mongoose.model('Task', TaskSchema);
+
+

@@ -10,7 +10,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			// Create new Project object
 			var project = new Projects ({
 				name: this.name,
-				deadline: this.deadline
+				deadline: this.deadline,
+				tasks: []
 			});
 
 			// Redirect after save
@@ -53,7 +54,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 					$scope.error = errorResponse.data.message;
 				});
 			}
-		}
+		};
 
 		// Update existing Project
 		$scope.update = function() {

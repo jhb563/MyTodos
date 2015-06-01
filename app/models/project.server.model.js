@@ -5,6 +5,8 @@
  */
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
+var Task = require('./task.server.model.js');
+
 
 /**
  * Project Schema
@@ -31,7 +33,11 @@ var ProjectSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	}
+	},
+	tasks: [Task]
+		
 });
 
-mongoose.model('Project', ProjectSchema);
+module.exports = mongoose.model('Project', ProjectSchema);
+
+
